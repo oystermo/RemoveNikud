@@ -1,4 +1,4 @@
-# Subtitle Edit Plugin for remove Niqqud in Hebrew
+# Subtitle Edit Plugin for removing Niqqud in Hebrew
 
 Compile the plugins for "Any CPU".
 
