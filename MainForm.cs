@@ -1,9 +1,9 @@
 ﻿using System.Globalization;
 using Nikse.SubtitleEdit.PluginLogic;
 using System;
-using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace SubtitleEdit
 {
@@ -25,7 +25,6 @@ namespace SubtitleEdit
                     OnClick(EventArgs.Empty);
             };
             listView1.Columns[2].Width = -2;
-            linkLabel1.Click += delegate { Process.Start("https://github.com/SubtitleEdit/plugins/issues/new"); };
         }
 
         public MainForm(Subtitle sub, string title, string description, Form parentForm)
@@ -75,6 +74,10 @@ namespace SubtitleEdit
             var item = new ListViewItem(p.Number.ToString(CultureInfo.InvariantCulture)) { Tag = p };
             item.SubItems.Add(before);
             item.SubItems.Add(after);
+            if (before != after)
+            {
+                item.BackColor = Color.Gray;
+            }
             listView1.Items.Add(item);
         }
 
